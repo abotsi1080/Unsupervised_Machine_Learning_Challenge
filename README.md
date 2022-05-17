@@ -13,7 +13,7 @@
 
 * I then filtered for currencies that are currently being traded. Once done sorting, I then dropped the `IsTrading` column from the dataframe and removed all rows that have at least one null value. I also filtered for cryptocurrencies that have been mined. In order for your dataset to be comprehensible to a machine learning algorithm, its data should be numeric. Since the coin names do not contribute to the analysis of the data, I deleted the `CoinName` from the original dataframe.
 
-![Cleaned DataFrame](Images.Cleaned_DataFrame.png)
+![Cleaned DataFrame](/Images/Cleaned_DataFrame.png)
 
 * The next step in the data preparation was to convert the remaining features with text values, `Algorithm` and `ProofType`, into numerical data. I accomplished that task by using Pandas to create dummy variables with LabelEncoder and OneHotEncoder. 
 
