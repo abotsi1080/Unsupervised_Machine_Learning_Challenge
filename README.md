@@ -13,40 +13,40 @@
 
 * I then filtered for currencies that are currently being traded. Once done sorting, I then dropped the `IsTrading` column from the dataframe and removed all rows that have at least one null value. I also filtered for cryptocurrencies that have been mined. In order for your dataset to be comprehensible to a machine learning algorithm, its data should be numeric. Since the coin names do not contribute to the analysis of the data, I deleted the `CoinName` from the original dataframe.
 
-![Cleaned DataFrame](/Images/Cleaned_DataFrame.png)
+![Cleaned DataFrame](Images/Cleaned_DataFrame.png)
 
 * The next step in the data preparation was to convert the remaining features with text values, `Algorithm` and `ProofType`, into numerical data. I accomplished that task by using Pandas to create dummy variables with LabelEncoder and OneHotEncoder. 
 
-![Converted DataFrame](Images.Converted_DataFrame)
+![Converted DataFrame](Images/Converted_DataFrame)
 
 * The dataset was then standardized so that columns that contain larger values do not unduly influence the outcome. This was then fit transformed as a fully scaled data set for further analysis.
 
-![Scaled Fitted Transormed](Images.Scaled_Fit_Transform)
+![Scaled Fitted Transormed](Images/Scaled_Fit_Transform)
 
 ### Dimensionality Reduction
 
 * Creating dummy variables above dramatically increased the number of features in the dataset. I did perform dimensionality reduction with PCA. Rather than specifying the number of principal components when I instantiated the PCA model, I preserved 90% of the explained variance in dimensionality reduction. 
 
-![PCA Analysis](Images.PCA_Analysis)
+![PCA Analysis](Images/PCA_Analysis)
 
 A PCA prediction was also executed and the results are shown as below:
 
-![PCA Prediction](Images.PCA_prediction)
+![PCA Prediction](Images/PCA_prediction)
 
 The following graphs were plotted on the PCA data. These graphs represent plotly scatter plot showing the clusters with markers identifying the Coin name and Algorithm.
-![PCA 1 and 2](Images.PCA.1_2)
-![PCA 1 and 3](Images.PCA.1_3)
-![PCA 2 and 3](Images.PCA.2_3)
+![PCA 1 and 2](Images/PCA.1_2)
+![PCA 1 and 3](Images/PCA.1_3)
+![PCA 2 and 3](Images/PCA.2_3)
 
 * Next, I further reduced the dataset dimensions with t-SNE and visually inspected the results. In order to accomplish this task, I run t-SNE on the principal components: the output of the PCA transformation. Then create a scatter plot of the t-SNE output.
 
-![t-SNE](Images.tsne)
+![t-SNE](Images/tsne)
 
 ### Cluster Analysis with k-Means
 
 * I then created an elbow plot to identify the best number of clusters. Using a for-loop I was able to determine the inertia for each `k` between 1 through 10. Looking into the graph, I would say that the K-value at which the elbow of the plot is, k = 5.
 
-![t-SNE](Images.tsne)
+![Elbow Curve](Images/Elbow_curve)
 
 ### Recommendation
 
